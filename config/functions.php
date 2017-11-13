@@ -35,3 +35,14 @@ function getActivity($id)
 		header('Location: header.php');
 	}
 }
+
+
+//Pour récupérer la liste des animateurs de l'association
+function getAnimator(){
+	require('config/connect.php');
+	$req = $bdd->prepare('SELECT benevole FROM benevoles');
+	$req->execute();
+	$data = $req->fetchAll(PDO::FETCH_OBJ);
+	return $data;
+	$req->closeCursor();
+}
