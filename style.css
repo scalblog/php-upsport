@@ -1,0 +1,26 @@
+body {
+	max-width: 900px;
+	background-color: #D8F6CE;
+}
+
+main {
+	width: 750px; 
+	margin: 0 auto;
+}
+
+main>img:first-of-type {
+	width: 320px;
+}
+
+.card {
+	margin : 2rem 0;
+	padding: 2rem 2rem;
+}
+
+.card-title {
+	margin-top: 1rem;
+}
+
+.card .btn {
+	margin: 1rem 3rem;
+}
