@@ -27,11 +27,12 @@
 </head>
 <body class="container-fluid">
 	<h1><?= $activity->animation ?> du <?= date('d m Y', strtotime($activity->date_rendezvous)) ?></h1> 
-	<form action="" method="POST">
+	<form action="config/update.php" method="POST">
 		<table>
 			<tr>
 				<td>L'activité :</td>
 				<td><?= $activity->animation ?></td>
+				<input type="hidden" name="id_animation" value="<?= $activity->id_animation ?>" />
 			</tr>
 			<tr>
 				<td>normalement animée par :</td>
@@ -40,9 +41,9 @@
 			<tr>
 				<td>sera finalement animée par :</td>
 				<td>
-					<select id="host">
+					<select id="host" name="animateur">
 					<?php foreach ($hosts as $key => $host): ?>
-						<option value="valeur<?php $key?>"><?= $host->benevole ?></option>
+						<option value="<?php echo $host->id_benevole ?>"><?=$host->benevole ?></option>
 					<?php endforeach; ?>	
 					</select>
 				</td>
