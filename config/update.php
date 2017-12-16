@@ -19,17 +19,26 @@ require('connect.php');
 
 //$bdd->exec('UPDATE rendezvous SET lieu_rendezvous = "updated" WHERE id=8');
 
-var_dump($_POST);
+// var_dump($_POST);
+// var_dump($_POST['local']);
+// var_dump($_POST['id_animation']);
+var_dump($_POST['result']);
 
-$req = $bdd->prepare('UPDATE rendezvous SET lieu_rendezvous = ?, id = 8 WHERE id = 8');
+$req = $bdd->prepare('UPDATE rendezvous SET categorie_animation = ?, id_animateur = ?, date_rendezvous = ?, heure_rendezvous = ?, lieu_rendezvous = ?, adresse_rendezvous = ?,  url_maps_rendezvous = ? WHERE id = ?');
+
+// $req->execute(array(
+// 	'id' => [$_POST['id_animation']],
+// 	'categorie_animation' => [$_POST['id_animation']],
+// 	'lieu_rendezvous' => [$_POST['local']]
+// ));
+
+$req->execute(array($_POST['id_animation'], $_POST['animateur'], $_POST['date'], $_POST['hour'], $_POST['local'], $_POST['address'], $_POST['map'], $_POST['id_animation']));
+
+
+
 /*
-$req->execute(array(
-	'lieu_rendezvous' => [$_POST['local']],
-	'id' => 8
-));
-*/
 $req->execute([$_POST['local']]);
-
+*/
 
 
 /*
@@ -41,6 +50,6 @@ $req->execute(array(
 
 
 // Retour à la page d'accueil
-//header('Location: ../index.php');
-//exit();	
+// header('Location: ../index.php');
+// exit();	
 

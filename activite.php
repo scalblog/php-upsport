@@ -66,7 +66,7 @@
 			</tr>
 			<tr>
 				<td>Editer le lien<br>vers Google Maps</td>
-				<td><textarea name="address" rows="6" cols="50"><?php echo (isset($activity->adresse_rendezvous))?$activity->url_maps_rendezvous:'';?></textarea></td>
+				<td><textarea name="map" rows="6" cols="50"><?php echo (isset($activity->url_maps_rendezvous))?$activity->url_maps_rendezvous:'';?></textarea></td>
 			</tr>
 			<tr>
 				<td>Saisissez le mot de passe<br>pour enregistrer les modifications</td>
