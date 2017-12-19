@@ -47,3 +47,13 @@ function getAnimator(){
 	$req->closeCursor();
 }
 
+//Pour vérifier le mot de passe associé à une des activités
+
+function getPassword($id){
+	require('connect.php');
+	$req= $bdd->prepare('SELECT motdepasse FROM rendezvous WHERE id= ?');
+	$req->execute(array($id));
+	$key = $req->fetch(PDO::FETCH_OBJ);
+	return $key;
+	var_dump( $key);
+}

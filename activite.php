@@ -32,41 +32,41 @@
 			<tr>
 				<td>L'activité :</td>
 				<td><?= $activity->animation ?></td>
-				<input type="hidden" name="id_animation" value="<?= $activity->id_animation ?>" />
+				<input type="hidden" name="id_animation" value="<?= htmlspecialchars($activity->id_animation) ?>" />
 			</tr>
 			<tr>
 				<td>normalement animée par :</td>
-				<td><?= $activity->benevole ?></td>
+				<td><?= htmlspecialchars($activity->benevole) ?></td>
 			</tr>
 			<tr>
 				<td>sera finalement animée par :</td>
 				<td>
 					<select id="host" name="animateur">
 					<?php foreach ($hosts as $key => $host): ?>
-						<option value="<?php echo $host->id_benevole ?>"><?=$host->benevole ?></option>
+						<option value="<?php echo htmlspecialchars($host->id_benevole) ?>"><?=htmlspecialchars($host->benevole) ?></option>
 					<?php endforeach; ?>	
 					</select>
 				</td>
 			</tr>			
 			<tr>
 				<td><label for="date" >Date de l'activité annoncée :</label></td>
-				<td><input id="date" type="date" name="date" value="<?= $activity->date_rendezvous ?>"></td>
+				<td><input id="date" type="date" name="date" value="<?= htmlspecialchars($activity->date_rendezvous) ?>"></td>
 			</tr>			
 			<tr>
 				<td><label for="hour">Heure de l'activité annoncée :</label></td>
-				<td><input id="hour" type="time" name="hour" value="<?= $activity->heure_rendezvous ?>"></td>
+				<td><input id="hour" type="time" name="hour" value="<?= htmlspecialchars($activity->heure_rendezvous) ?>"></td>
 			</tr>
 			<tr>
 				<td>Nom du Lieu de rendez-vous :</td>
-				<td><textarea name="local" rows="2" cols="50"><?php echo (isset($activity->lieu_rendezvous))?$activity->lieu_rendezvous:'';?></textarea></td>
+				<td><textarea name="local" rows="2" cols="50"><?php echo (isset($activity->lieu_rendezvous))?htmlspecialchars($activity->lieu_rendezvous):'';?></textarea></td>
 			</tr>
 			<tr>
 				<td>Adresse indiquée :</td>
-				<td><textarea name="address" rows="4" cols="50"><?php echo (isset($activity->adresse_rendezvous))?$activity->adresse_rendezvous:'';?></textarea></td>
+				<td><textarea name="address" rows="4" cols="50"><?php echo (isset($activity->adresse_rendezvous))?htmlspecialchars($activity->adresse_rendezvous):'';?></textarea></td>
 			</tr>
 			<tr>
 				<td>Editer le lien<br>vers Google Maps</td>
-				<td><textarea name="map" rows="6" cols="50"><?php echo (isset($activity->url_maps_rendezvous))?$activity->url_maps_rendezvous:'';?></textarea></td>
+				<td><textarea name="map" rows="6" cols="50"><?php echo (isset($activity->url_maps_rendezvous))?htmlspecialchars($activity->url_maps_rendezvous):'';?></textarea></td>
 			</tr>
 			<tr>
 				<td>Saisissez le mot de passe<br>pour enregistrer les modifications</td>
